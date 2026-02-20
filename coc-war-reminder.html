@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoC War & CWL Reminder</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700;900&family=Crimson+Text:wght@400;600&display=swap');
+
+  :root {
+    --gold: #f4c430;
+    --gold-dark: #c9972a;
+    --gold-light: #ffe680;
+    --brown: #3b1e08;
+    --brown-mid: #5c2e0a;
+    --brown-light: #8b4513;
+    --red: #c0392b;
+    --red-dark: #922b21;
+    --green: #1e8449;
+    --green-dark: #145a32;
+    --blue: #1a5276;
+    --blue-light: #2980b9;
+    --parchment: #f5deb3;
+    --parchment-dark: #deb887;
+    --shadow: rgba(0,0,0,0.6);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0f;
+    font-family: 'Crimson Text', serif;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(180,80,0,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(100,30,0,0.2) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(180deg, #1a0a00 0%, #2d1200 50%, #1a0a00 100%);
+    border-bottom: 3px solid var(--gold);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='100'%3E%3Cpath d='M0,50 Q100,10 200,50 Q300,90 400,50' stroke='%23f4c43022' stroke-width='1' fill='none'/%3E%3C/svg%3E") repeat-x;
+    opacity: 0.4;
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo-icon {
+    width: 60px; height: 60px;
+    background: radial-gradient(circle at 40% 35%, #ffe680, #c9972a, #5c2e0a);
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 0 20px rgba(244,196,48,0.5), 0 4px 12px rgba(0,0,0,0.5);
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%,100% { box-shadow: 0 0 20px rgba(244,196,48,0.4), 0 4px 12px rgba(0,0,0,0.5); }
+    50% { box-shadow: 0 0 35px rgba(244,196,48,0.8), 0 4px 20px rgba(0,0,0,0.5); }
+  }
+
+  .logo-text h1 {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 1.6rem;
+    color: var(--gold);
+    text-shadow: 0 0 15px rgba(244,196,48,0.5), 2px 2px 4px rgba(0,0,0,0.8);
+    letter-spacing: 2px;
+  }
+
+  .logo-text p {
+    color: var(--parchment-dark);
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .header-clock {
+    text-align: right;
+  }
+
+  .clock-display {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(244,196,48,0.6);
+    letter-spacing: 3px;
+  }
+
+  .date-display {
+    color: var(--parchment-dark);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* NAV TABS */
+  .nav-tabs {
+    background: linear-gradient(180deg, #1a0800 0%, #0d0400 100%);
+    border-bottom: 2px solid var(--gold-dark);
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    gap: 4px;
+    overflow-x: auto;
+  }
+
+  .tab-btn {
+    padding: 14px 28px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--parchment-dark);
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .tab-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent, rgba(244,196,48,0.05));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .tab-btn:hover::before, .tab-btn.active::before { opacity: 1; }
+
+  .tab-btn:hover { color: var(--gold-light); border-bottom-color: rgba(244,196,48,0.4); }
+  .tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+  /* MAIN LAYOUT */
+  .main-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 24px;
+  }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* PANEL CARDS */
+  .panel {
+    background: linear-gradient(135deg, #1e0e02 0%, #150a00 50%, #1e0e02 100%);
+    border: 1px solid var(--gold-dark);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6), inset 0 1px 0 rgba(244,196,48,0.1);
+  }
+
+  .panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .panel-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(244,196,48,0.2);
+  }
+
+  .panel-title .icon { font-size: 1.3rem; }
+
+  /* FORM ELEMENTS */
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+  .form-group label {
+    color: var(--gold-light);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid var(--gold-dark);
+    border-radius: 6px;
+    color: var(--parchment);
+    padding: 10px 14px;
+    font-family: 'Crimson Text', serif;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 12px rgba(244,196,48,0.2);
+  }
+
+  .form-group select option { background: #1e0e02; }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+
+  /* BUTTONS */
+  .btn {
+    padding: 11px 24px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 0; height: 0;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    transition: width 0.4s, height 0.4s;
+  }
+
+  .btn:active::after { width: 200px; height: 200px; }
+
+  .btn-gold {
+    background: linear-gradient(135deg, #c9972a, #f4c430, #c9972a);
+    color: #1a0800;
+    box-shadow: 0 4px 15px rgba(244,196,48,0.3);
+  }
+
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(244,196,48,0.5); }
+
+  .btn-red {
+    background: linear-gradient(135deg, #922b21, #c0392b, #922b21);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(192,57,43,0.3);
+  }
+
+  .btn-red:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(192,57,43,0.4); }
+
+  .btn-green {
+    background: linear-gradient(135deg, #145a32, #1e8449, #145a32);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(30,132,73,0.3);
+  }
+
+  .btn-green:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(30,132,73,0.4); }
+
+  .btn-blue {
+    background: linear-gradient(135deg, #1a5276, #2980b9, #1a5276);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(41,128,185,0.3);
+  }
+
+  .btn-blue:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(41,128,185,0.4); }
+
+  .btn-sm { padding: 7px 14px; font-size: 0.75rem; }
+  .btn-icon { background: none; border: 1px solid var(--gold-dark); color: var(--gold); padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; }
+  .btn-icon:hover { background: rgba(244,196,48,0.1); }
+
+  /* STATUS BADGES */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .badge-prep { background: rgba(41,128,185,0.2); border: 1px solid #2980b9; color: #7fb3d3; }
+  .badge-war { background: rgba(192,57,43,0.2); border: 1px solid #c0392b; color: #e74c3c; }
+  .badge-idle { background: rgba(100,100,100,0.2); border: 1px solid #555; color: #aaa; }
+  .badge-cwl { background: rgba(155,89,182,0.2); border: 1px solid #9b59b6; color: #c39bd3; }
+  .badge-win { background: rgba(30,132,73,0.2); border: 1px solid #1e8449; color: #52be80; }
+  .badge-loss { background: rgba(192,57,43,0.2); border: 1px solid #c0392b; color: #e74c3c; }
+
+  /* COUNTDOWN TIMER */
+  .countdown-box {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding: 20px 0;
+    flex-wrap: wrap;
+  }
+
+  .time-unit {
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid var(--gold-dark);
+    border-radius: 8px;
+    padding: 14px 18px;
+    min-width: 70px;
+    position: relative;
+  }
+
+  .time-unit::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+  }
+
+  .time-value {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    text-shadow: 0 0 15px rgba(244,196,48,0.6);
+  }
+
+  .time-label {
+    font-size: 0.65rem;
+    color: var(--parchment-dark);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* MEMBERS TABLE */
+  .members-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .members-table th {
+    background: rgba(244,196,48,0.1);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--gold-dark);
+  }
+
+  .members-table td {
+    padding: 12px 14px;
+    color: var(--parchment);
+    border-bottom: 1px solid rgba(244,196,48,0.08);
+    font-size: 0.95rem;
+  }
+
+  .members-table tr:hover td { background: rgba(244,196,48,0.04); }
+
+  /* STARS */
+  .stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 2px; }
+  .star-empty { color: #333; }
+
+  /* PROGRESS BAR */
+  .progress-bar-wrap { background: rgba(0,0,0,0.4); border-radius: 100px; height: 10px; overflow: hidden; border: 1px solid rgba(244,196,48,0.2); }
+  .progress-bar-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg, var(--gold-dark), var(--gold)); transition: width 0.5s ease; }
+
+  /* SCORE DISPLAY */
+  .score-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .score-side { text-align: center; }
+  .clan-name { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--parchment); margin-bottom: 4px; }
+  .clan-score { font-family: 'Cinzel', serif; font-size: 3rem; font-weight: 900; line-height: 1; }
+  .our-score { color: var(--gold); text-shadow: 0 0 20px rgba(244,196,48,0.5); }
+  .their-score { color: #aaa; }
+  .vs-text { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--red); font-weight: 900; }
+
+  /* NOTIFICATION BELL */
+  .notif-indicator {
+    width: 10px; height: 10px;
+    background: var(--red);
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 6px;
+    animation: blink 1.5s ease-in-out infinite;
+  }
+
+  @keyframes blink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+
+  /* REMINDER CARD */
+  .reminder-card {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(244,196,48,0.15);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    transition: all 0.2s;
+  }
+
+  .reminder-card:hover { border-color: rgba(244,196,48,0.35); background: rgba(0,0,0,0.4); }
+
+  .reminder-icon {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .reminder-body { flex: 1; }
+  .reminder-title { color: var(--gold-light); font-family: 'Cinzel', serif; font-size: 0.9rem; margin-bottom: 4px; }
+  .reminder-desc { color: var(--parchment-dark); font-size: 0.88rem; margin-bottom: 8px; }
+  .reminder-time { color: #888; font-size: 0.78rem; letter-spacing: 1px; }
+
+  .reminder-actions { display: flex; gap: 8px; align-items: center; }
+
+  /* STATS GRID */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(244,196,48,0.15);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+
+  .stat-card:hover { border-color: rgba(244,196,48,0.4); }
+  .stat-value { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 900; color: var(--gold); line-height: 1; }
+  .stat-label { color: var(--parchment-dark); font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 4px; }
+
+  /* TOAST */
+  .toast-container { position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; }
+
+  .toast {
+    background: linear-gradient(135deg, #1e0e02, #2d1200);
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    padding: 14px 18px;
+    color: var(--parchment);
+    min-width: 260px;
+    max-width: 320px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+    animation: toast-in 0.4s ease;
+    font-size: 0.9rem;
+  }
+
+  @keyframes toast-in {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes toast-out {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100px); opacity: 0; }
+  }
+
+  .toast-icon { font-size: 1.4rem; }
+
+  /* SECTION DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+    margin: 20px 0;
+  }
+
+  /* CWL LEAGUE */
+  .cwl-league {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .league-badge {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .league-champion { background: linear-gradient(135deg, #f4c430, #c9972a); color: #1a0800; }
+  .league-master { background: linear-gradient(135deg, #c0392b, #922b21); color: #fff; }
+  .league-crystal { background: linear-gradient(135deg, #7fb3d3, #2980b9); color: #fff; }
+
+  /* ROUND INDICATOR */
+  .round-dots { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 12px 0; }
+  .round-dot {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--gold-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .round-dot.done { background: var(--green); border-color: var(--green); color: #fff; }
+  .round-dot.current { background: rgba(244,196,48,0.2); border-color: var(--gold); color: var(--gold); box-shadow: 0 0 12px rgba(244,196,48,0.4); }
+  .round-dot:hover { border-color: var(--gold-light); }
+
+  /* EMPTY STATE */
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #555;
+  }
+
+  .empty-state .empty-icon { font-size: 3rem; margin-bottom: 12px; opacity: 0.4; }
+  .empty-state p { font-size: 0.9rem; letter-spacing: 1px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .header-inner { padding: 14px 16px; }
+    .logo-text h1 { font-size: 1.2rem; }
+    .clock-display { font-size: 1.2rem; }
+    .score-grid { grid-template-columns: 1fr; }
+    .vs-text { display: none; }
+    .main-wrap { padding: 16px; }
+    .panel { padding: 16px; }
+    .clan-score { font-size: 2rem; }
+    .tab-btn { padding: 12px 16px; font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-area">
+      <div class="logo-icon">⚔️</div>
+      <div class="logo-text">
+        <h1>WAR COMMANDER</h1>
+        <p>Clash of Clans • War & CWL Tracker</p>
+      </div>
+    </div>
+    <div class="header-clock">
+      <div class="clock-display" id="liveClock">00:00:00</div>
+      <div class="date-display" id="liveDate">Loading...</div>
+    </div>
+  </div>
+  <nav style="background:rgba(0,0,0,0.3);">
+    <div class="nav-tabs" id="navTabs">
+      <button class="tab-btn active" data-tab="dashboard">🏰 Dashboard</button>
+      <button class="tab-btn" data-tab="war">⚔️ Clan War</button>
+      <button class="tab-btn" data-tab="cwl">🏆 CWL</button>
+      <button class="tab-btn" data-tab="reminders">🔔 Reminders <span class="notif-indicator" id="notifDot"></span></button>
+      <button class="tab-btn" data-tab="members">👥 Members</button>
+    </div>
+  </nav>
+</header>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<div class="main-wrap">
+
+  <!-- DASHBOARD TAB -->
+  <div class="tab-content active" id="tab-dashboard">
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value" id="stat-warwin">0</div>
+        <div class="stat-label">War Wins</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-warloss">0</div>
+        <div class="stat-label">War Losses</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-stars">0</div>
+        <div class="stat-label">Total Stars</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-cwlmedal">0</div>
+        <div class="stat-label">CWL Medals</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-members">0</div>
+        <div class="stat-label">Members</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-reminders">0</div>
+        <div class="stat-label">Active Reminders</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title"><span class="icon">🏰</span>Clan Setup</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Clan Name</label>
+          <input type="text" id="clanName" placeholder="e.g. Dark Knights" value="Dark Knights">
+        </div>
+        <div class="form-group">
+          <label>Clan Tag</label>
+          <input type="text" id="clanTag" placeholder="#ABC123" value="#DK1234">
+        </div>
+        <div class="form-group">
+          <label>War League</label>
+          <select id="warLeague">
+            <option>Champion League I</option>
+            <option>Champion League II</option>
+            <option>Champion League III</option>
+            <option selected>Master League I</option>
+            <option>Master League II</option>
+            <option>Master League III</option>
+            <option>Crystal League I</option>
+            <option>Crystal League II</option>
+            <option>Crystal League III</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Clan Level</label>
+          <input type="number" id="clanLevel" value="15" min="1" max="25">
+        </div>
+      </div>
+      <button class="btn btn-gold" onclick="saveClanSetup()">⚔️ Save Clan Info</button>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title"><span class="icon">📊</span>Active Status</div>
+      <div id="dashboardStatus">
+        <div class="empty-state">
+          <div class="empty-icon">🛡️</div>
+          <p>No active war or CWL.<br>Set one up in the War or CWL tabs!</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WAR TAB -->
+  <div class="tab-content" id="tab-war">
+
+    <div class="panel">
+      <div class="panel-title"><span class="icon">⚔️</span>War Setup</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Enemy Clan</label>
+          <input type="text" id="enemyClan" placeholder="Enemy Clan Name" value="">
+        </div>
+        <div class="form-group">
+          <label>War Size</label>
+          <select id="warSize">
+            <option>10 vs 10</option>
+            <option>15 vs 15</option>
+            <option selected>20 vs 20</option>
+            <option>25 vs 25</option>
+            <option>30 vs 30</option>
+            <option>35 vs 35</option>
+            <option>40 vs 40</option>
+            <option>45 vs 45</option>
+            <option>50 vs 50</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>War Status</label>
+          <select id="warStatus">
+            <option value="idle">Idle / Not in War</option>
+            <option value="prep">Preparation Day</option>
+            <option value="war">Battle Day</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>War End Time</label>
+          <input type="datetime-local" id="warEndTime">
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Our Stars</label>
+          <input type="number" id="ourStars" value="0" min="0">
+        </div>
+        <div class="form-group">
+          <label>Enemy Stars</label>
+          <input type="number" id="enemyStars" value="0" min="0">
+        </div>
+        <div class="form-group">
+          <label>Our Destruction %</label>
+          <input type="number" id="ourDestruct" value="0" min="0" max="100" step="0.1">
+        </div>
+        <div class="form-group">
+          <label>Enemy Destruction %</label>
+          <input type="number" id="enemyDestruct" value="0" min="0" max="100" step="0.1">
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn btn-gold" onclick="saveWar()">⚔️ Update War</button>
+        <button class="btn btn-green" onclick="markWarResult('win')">🏆 Mark Win</button>
+        <button class="btn btn-red" onclick="markWarResult('loss')">💀 Mark Loss</button>
+      </div>
+    </div>
+
+    <div class="panel" id="warPanel">
+      <div class="panel-title"><span class="icon">📋</span>War Status</div>
+      <div id="warDisplay">
+        <div class="empty-state">
+          <div class="empty-icon">⚔️</div>
+          <p>Set up a war above to see live status</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title"><span class="icon">📜</span>War Log</div>
+      <div id="warLog">
+        <div class="empty-state"><div class="empty-icon">📜</div><p>No war history yet</p></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CWL TAB -->
+  <div class="tab-content" id="tab-cwl">
+
+    <div class="panel">
+      <div class="panel-title"><span class="icon">🏆</span>CWL Setup</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>CWL Season</label>
+          <input type="month" id="cwlSeason">
+        </div>
+        <div class="form-group">
+          <label>League</label>
+          <select id="cwlLeague">
+            <option>Champion League I</option>
+            <option>Champion League II</option>
+            <option>Champion League III</option>
+            <option selected>Master League I</option>
+            <option>Master League II</option>
+            <option>Crystal League I</option>
+            <option>Crystal League II</option>
+            <option>Gold League I</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Current Round</label>
+          <input type="number" id="cwlRound" value="1" min="1" max="7">
+        </div>
+        <div class="form-group">
+          <label>Round End Time</label>
+          <input type="datetime-local" id="cwlEndTime">
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Our Stars (This Round)</label>
+          <input type="number" id="cwlOurStars" value="0" min="0">
+        </div>
+        <div class="form-group">
+          <label>Enemy Stars (This Round)</label>
+          <input type="number" id="cwlEnemyStars" value="0" min="0">
+        </div>
+        <div class="form-group">
+          <label>Total Season Stars</label>
+          <input type="number" id="cwlTotalStars" value="0" min="0">
+        </div>
+        <div class="form-group">
+          <label>Estimated Medals</label>
+          <input type="number" id="cwlMedals" value="0" min="0">
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn btn-gold" onclick="saveCWL()">🏆 Update CWL</button>
+        <button class="btn btn-green" onclick="cwlRoundResult('win')">✅ Round Win</button>
+        <button class="btn btn-red" onclick="cwlRoundResult('loss')">❌ Round Loss</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title"><span class="icon">🔢</span>CWL Rounds Progress</div>
+      <div id="cwlProgress">
+        <div class="empty-state"><div class="empty-icon">🏆</div><p>Set up CWL above to track rounds</p></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title"><span class="icon">⏱️</span>Round Countdown</div>
+      <div id="cwlCountdownDisplay">
+        <div class="empty-state"><div class="empty-icon">⏰</div><p>Set round end time to see countdown</p></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- REMINDERS TAB -->
+  <div class="tab-content" id="tab-reminders">
+
+    <div class="panel">
+      <div class="panel-title"><span class="icon">🔔</span>Add Reminder</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Reminder Title</label>
+          <input type="text" id="remTitle" placeholder="e.g. Use war attacks!">
+        </div>
+        <div class="form-group">
+          <label>Type</label>
+          <select id="remType">
+            <option value="war">⚔️ Clan War</option>
+            <option value="cwl">🏆 CWL</option>
+            <option value="donation">🎁 Donation</option>
+            <option value="clan-games">🎮 Clan Games</option>
+            <option value="raid">🏰 Raid Weekend</option>
+            <option value="custom">📌 Custom</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Reminder Time</label>
+          <input type="datetime-local" id="remTime">
+        </div>
+        <div class="form-group">
+          <label>Repeat</label>
+          <select id="remRepeat">
+            <option value="none">No Repeat</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group" style="margin-bottom:16px;">
+        <label>Notes (optional)</label>
+        <textarea id="remNotes" placeholder="Add notes or instructions..."></textarea>
+      </div>
+      <button class="btn btn-gold" onclick="addReminder()">🔔 Add Reminder</button>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title"><span class="icon">📋</span>Active Reminders</div>
+      <div id="remindersList">
+        <div class="empty-state"><div class="empty-icon">🔔</div><p>No reminders set. Add one above!</p></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MEMBERS TAB -->
+  <div class="tab-content" id="tab-members">
+
+    <div class="panel">
+      <div class="panel-title"><span class="icon">➕</span>Add Member</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Player Name</label>
+          <input type="text" id="memName" placeholder="Player name">
+        </div>
+        <div class="form-group">
+          <label>Town Hall Level</label>
+          <select id="memTH">
+            <option>TH16</option><option>TH15</option><option selected>TH14</option>
+            <option>TH13</option><option>TH12</option><option>TH11</option>
+            <option>TH10</option><option>TH9</option><option>TH8</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Role</label>
+          <select id="memRole">
+            <option>Leader</option>
+            <option>Co-Leader</option>
+            <option selected>Elder</option>
+            <option>Member</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>War Attacks Used</label>
+          <input type="number" id="memAttacks" value="0" min="0" max="2">
+        </div>
+      </div>
+      <button class="btn btn-gold" onclick="addMember()">👥 Add Member</button>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title"><span class="icon">📋</span>Clan Roster</div>
+      <div id="membersList">
+        <div class="empty-state"><div class="empty-icon">👥</div><p>No members added yet</p></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+// ===================== DATA =====================
+let state = {
+  clan: { name: 'Dark Knights', tag: '#DK1234', league: 'Master League I', level: 15 },
+  war: { status: 'idle', enemy: '', size: '20 vs 20', endTime: '', ourStars: 0, enemyStars: 0, ourDestruct: 0, enemyDestruct: 0 },
+  cwl: { season: '', league: 'Master League I', round: 1, endTime: '', ourStars: 0, enemyStars: 0, totalStars: 0, medals: 0, rounds: [] },
+  warLog: [],
+  reminders: [],
+  members: [],
+  stats: { wins: 0, losses: 0, totalStars: 0, cwlMedals: 0 }
+};
+
+function save() { try { localStorage.setItem('cocwar_state', JSON.stringify(state)); } catch(e){} }
+function load() {
+  try {
+    const d = localStorage.getItem('cocwar_state');
+    if (d) state = JSON.parse(d);
+  } catch(e){}
+}
+
+// ===================== CLOCK =====================
+function updateClock() {
+  const now = new Date();
+  document.getElementById('liveClock').textContent =
+    now.toLocaleTimeString('en-US', { hour12: false });
+  document.getElementById('liveDate').textContent =
+    now.toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).toUpperCase();
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ===================== TABS =====================
+document.getElementById('navTabs').addEventListener('click', e => {
+  const btn = e.target.closest('.tab-btn');
+  if (!btn) return;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+});
+
+// ===================== TOAST =====================
+function showToast(msg, icon = '⚔️') {
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.innerHTML = `<span class="toast-icon">${icon}</span><span>${msg}</span>`;
+  document.getElementById('toastContainer').appendChild(t);
+  setTimeout(() => {
+    t.style.animation = 'toast-out 0.4s ease forwards';
+    setTimeout(() => t.remove(), 400);
+  }, 3000);
+}
+
+// ===================== CLAN SETUP =====================
+function saveClanSetup() {
+  state.clan.name = document.getElementById('clanName').value || 'Dark Knights';
+  state.clan.tag = document.getElementById('clanTag').value || '#000';
+  state.clan.league = document.getElementById('warLeague').value;
+  state.clan.level = parseInt(document.getElementById('clanLevel').value) || 1;
+  save(); updateStats(); showToast('Clan info saved!', '🏰');
+}
+
+// ===================== WAR =====================
+function saveWar() {
+  state.war.enemy = document.getElementById('enemyClan').value || 'Unknown Enemy';
+  state.war.size = document.getElementById('warSize').value;
+  state.war.status = document.getElementById('warStatus').value;
+  state.war.endTime = document.getElementById('warEndTime').value;
+  state.war.ourStars = parseInt(document.getElementById('ourStars').value) || 0;
+  state.war.enemyStars = parseInt(document.getElementById('enemyStars').value) || 0;
+  state.war.ourDestruct = parseFloat(document.getElementById('ourDestruct').value) || 0;
+  state.war.enemyDestruct = parseFloat(document.getElementById('enemyDestruct').value) || 0;
+  save(); renderWar(); renderDashboard(); updateStats();
+  showToast('War updated!', '⚔️');
+}
+
+function markWarResult(result) {
+  const entry = {
+    enemy: state.war.enemy || 'Unknown',
+    size: state.war.size,
+    result,
+    ourStars: state.war.ourStars,
+    enemyStars: state.war.enemyStars,
+    ourDestruct: state.war.ourDestruct,
+    enemyDestruct: state.war.enemyDestruct,
+    date: new Date().toLocaleDateString()
+  };
+  state.warLog.unshift(entry);
+  if (result === 'win') state.stats.wins++;
+  else state.stats.losses++;
+  state.stats.totalStars += state.war.ourStars;
+  state.war.status = 'idle';
+  document.getElementById('warStatus').value = 'idle';
+  save(); renderWar(); renderWarLog(); updateStats();
+  showToast(result === 'win' ? '🏆 War Won! Victory!' : '💀 War Lost. Better luck next time!', result === 'win' ? '🏆' : '💀');
+}
+
+function renderWar() {
+  const d = document.getElementById('warDisplay');
+  if (state.war.status === 'idle') {
+    d.innerHTML = `<div class="empty-state"><div class="empty-icon">⚔️</div><p>Not in a war. Set status to begin!</p></div>`;
+    return;
+  }
+  const statusBadge = state.war.status === 'prep' ?
+    `<span class="badge badge-prep">🛡️ Preparation Day</span>` :
+    `<span class="badge badge-war">⚔️ Battle Day</span>`;
+
+  const maxStars = parseInt(state.war.size) * 3;
+  const ourPct = maxStars > 0 ? ((state.war.ourStars / maxStars) * 100).toFixed(1) : 0;
+  const enemyPct = maxStars > 0 ? ((state.war.enemyStars / maxStars) * 100).toFixed(1) : 0;
+
+  d.innerHTML = `
+    <div style="margin-bottom:16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+      ${statusBadge}
+      <span style="color:var(--parchment-dark);font-size:0.85rem;">War Size: <strong style="color:var(--gold)">${state.war.size}</strong></span>
+    </div>
+    <div class="score-grid">
+      <div class="score-side">
+        <div class="clan-name">🏰 ${state.clan.name}</div>
+        <div class="clan-score our-score">${state.war.ourStars}</div>
+        <div style="color:var(--parchment-dark);font-size:0.85rem;">${state.war.ourDestruct}% Destruction</div>
+      </div>
+      <div style="text-align:center;">
+        <div class="vs-text">VS</div>
+        ${state.war.endTime ? `<div style="color:#888;font-size:0.75rem;margin-top:4px;">Ends<br>${new Date(state.war.endTime).toLocaleString()}</div>` : ''}
+      </div>
+      <div class="score-side">
+        <div class="clan-name">⚔️ ${state.war.enemy || 'Enemy Clan'}</div>
+        <div class="clan-score their-score">${state.war.enemyStars}</div>
+        <div style="color:var(--parchment-dark);font-size:0.85rem;">${state.war.enemyDestruct}% Destruction</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div style="margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+        <span style="color:var(--gold-light);font-size:0.82rem;">Our Stars (${ourPct}%)</span>
+        <span style="color:var(--gold)">${state.war.ourStars} / ${maxStars}</span>
+      </div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:${ourPct}%"></div></div>
+    </div>
+    <div>
+      <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+        <span style="color:#aaa;font-size:0.82rem;">Enemy Stars (${enemyPct}%)</span>
+        <span style="color:#aaa">${state.war.enemyStars} / ${maxStars}</span>
+      </div>
+      <div class="progress-bar-wrap" style="background:rgba(0,0,0,0.4);">
+        <div class="progress-bar-fill" style="width:${enemyPct}%;background:linear-gradient(90deg,#922b21,#c0392b);"></div>
+      </div>
+    </div>
+    ${state.war.endTime ? `<div id="warCountdown" class="countdown-box" style="margin-top:16px;"></div>` : ''}
+  `;
+}
+
+function renderWarLog() {
+  const d = document.getElementById('warLog');
+  if (!state.warLog.length) {
+    d.innerHTML = `<div class="empty-state"><div class="empty-icon">📜</div><p>No war history yet</p></div>`;
+    return;
+  }
+  d.innerHTML = `<table class="members-table">
+    <thead><tr>
+      <th>Enemy</th><th>Size</th><th>Stars</th><th>Destruct</th><th>Result</th><th>Date</th>
+    </tr></thead>
+    <tbody>
+    ${state.warLog.map(w => `<tr>
+      <td>${w.enemy}</td>
+      <td>${w.size}</td>
+      <td>${w.ourStars} - ${w.enemyStars}</td>
+      <td>${w.ourDestruct}% - ${w.enemyDestruct}%</td>
+      <td><span class="badge ${w.result === 'win' ? 'badge-win' : 'badge-loss'}">${w.result === 'win' ? '🏆 WIN' : '💀 LOSS'}</span></td>
+      <td>${w.date}</td>
+    </tr>`).join('')}
+    </tbody>
+  </table>`;
+}
+
+// ===================== CWL =====================
+function saveCWL() {
+  state.cwl.season = document.getElementById('cwlSeason').value;
+  state.cwl.league = document.getElementById('cwlLeague').value;
+  state.cwl.round = parseInt(document.getElementById('cwlRound').value) || 1;
+  state.cwl.endTime = document.getElementById('cwlEndTime').value;
+  state.cwl.ourStars = parseInt(document.getElementById('cwlOurStars').value) || 0;
+  state.cwl.enemyStars = parseInt(document.getElementById('cwlEnemyStars').value) || 0;
+  state.cwl.totalStars = parseInt(document.getElementById('cwlTotalStars').value) || 0;
+  state.cwl.medals = parseInt(document.getElementById('cwlMedals').value) || 0;
+  state.stats.cwlMedals = state.cwl.medals;
+  save(); renderCWL(); renderDashboard(); updateStats();
+  showToast('CWL updated!', '🏆');
+}
+
+function cwlRoundResult(result) {
+  if (!state.cwl.rounds) state.cwl.rounds = [];
+  state.cwl.rounds.push({ round: state.cwl.round, result, ourStars: state.cwl.ourStars, enemyStars: state.cwl.enemyStars });
+  if (state.cwl.round < 7) {
+    state.cwl.round++;
+    document.getElementById('cwlRound').value = state.cwl.round;
+  }
+  save(); renderCWL();
+  showToast(result === 'win' ? `Round Won! Moving to round ${state.cwl.round}` : `Round Lost.`, result === 'win' ? '✅' : '❌');
+}
+
+function renderCWL() {
+  const prog = document.getElementById('cwlProgress');
+  const rounds = state.cwl.rounds || [];
+
+  let dotsHTML = '';
+  for (let i = 1; i <= 7; i++) {
+    const r = rounds.find(x => x.round === i);
+    let cls = '';
+    if (r) cls = 'done';
+    else if (i === state.cwl.round) cls = 'current';
+    const label = r ? (r.result === 'win' ? '✓' : '✗') : i;
+    dotsHTML += `<div class="round-dot ${cls}" title="Round ${i}">${label}</div>`;
+  }
+
+  const wins = rounds.filter(r => r.result === 'win').length;
+  const losses = rounds.filter(r => r.result === 'loss').length;
+
+  prog.innerHTML = `
+    <div style="margin-bottom:12px;">
+      <div style="color:var(--parchment-dark);font-size:0.82rem;text-align:center;margin-bottom:12px;letter-spacing:1px;">
+        ROUND ${state.cwl.round} OF 7 &nbsp;|&nbsp; <span style="color:var(--green)">✅ ${wins} Wins</span> &nbsp;|&nbsp; <span style="color:var(--red)">❌ ${losses} Losses</span>
+      </div>
+      <div class="round-dots">${dotsHTML}</div>
+    </div>
+    <div class="divider"></div>
+    <div class="stats-grid" style="margin-top:16px;margin-bottom:0;">
+      <div class="stat-card"><div class="stat-value" style="font-size:1.5rem;">${state.cwl.totalStars} ⭐</div><div class="stat-label">Season Stars</div></div>
+      <div class="stat-card"><div class="stat-value" style="font-size:1.5rem;">${state.cwl.medals} 🏅</div><div class="stat-label">Est. Medals</div></div>
+      <div class="stat-card"><div class="stat-value" style="font-size:1.5rem;">${wins}/${7}</div><div class="stat-label">Rounds Won</div></div>
+    </div>
+    ${rounds.length > 0 ? `
+    <div class="divider"></div>
+    <table class="members-table" style="margin-top:0;">
+      <thead><tr><th>Round</th><th>Our Stars</th><th>Enemy Stars</th><th>Result</th></tr></thead>
+      <tbody>${rounds.map(r => `<tr>
+        <td>Round ${r.round}</td>
+        <td>${r.ourStars}</td>
+        <td>${r.enemyStars}</td>
+        <td><span class="badge ${r.result === 'win' ? 'badge-win' : 'badge-loss'}">${r.result === 'win' ? '✅ WIN' : '❌ LOSS'}</span></td>
+      </tr>`).join('')}</tbody>
+    </table>` : ''}
+  `;
+
+  // Countdown
+  const cd = document.getElementById('cwlCountdownDisplay');
+  if (state.cwl.endTime) {
+    cd.innerHTML = `<div style="text-align:center;color:var(--gold-light);font-family:'Cinzel',serif;font-size:0.85rem;margin-bottom:12px;">ROUND ${state.cwl.round} ENDS IN</div><div class="countdown-box" id="cwlCountdownBox"></div>`;
+  } else {
+    cd.innerHTML = `<div class="empty-state"><div class="empty-icon">⏰</div><p>Set round end time to see countdown</p></div>`;
+  }
+}
+
+// ===================== COUNTDOWNS =====================
+function updateCountdowns() {
+  const now = Date.now();
+
+  // War countdown
+  if (state.war.status !== 'idle' && state.war.endTime) {
+    const el = document.getElementById('warCountdown');
+    if (el) el.innerHTML = buildCountdown(state.war.endTime, now);
+  }
+
+  // CWL countdown
+  if (state.cwl.endTime) {
+    const el = document.getElementById('cwlCountdownBox');
+    if (el) el.innerHTML = buildCountdown(state.cwl.endTime, now);
+  }
+
+  // Reminder countdown
+  renderReminders();
+}
+
+function buildCountdown(endTime, now) {
+  const end = new Date(endTime).getTime();
+  const diff = end - now;
+  if (diff <= 0) return `<span style="color:var(--red);font-family:'Cinzel',serif;">⚠️ TIME'S UP!</span>`;
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  let html = '';
+  if (d > 0) html += `<div class="time-unit"><div class="time-value">${String(d).padStart(2,'0')}</div><div class="time-label">Days</div></div>`;
+  html += `<div class="time-unit"><div class="time-value">${String(h).padStart(2,'0')}</div><div class="time-label">Hours</div></div>`;
+  html += `<div class="time-unit"><div class="time-value">${String(m).padStart(2,'0')}</div><div class="time-label">Minutes</div></div>`;
+  html += `<div class="time-unit"><div class="time-value">${String(s).padStart(2,'0')}</div><div class="time-label">Seconds</div></div>`;
+  return html;
+}
+
+setInterval(updateCountdowns, 1000);
+
+// ===================== REMINDERS =====================
+const remIcons = { war:'⚔️', cwl:'🏆', donation:'🎁', 'clan-games':'🎮', raid:'🏰', custom:'📌' };
+const remColors = { war:'rgba(192,57,43,0.2)', cwl:'rgba(155,89,182,0.2)', donation:'rgba(41,128,185,0.2)', 'clan-games':'rgba(30,132,73,0.2)', raid:'rgba(180,100,0,0.2)', custom:'rgba(100,100,100,0.2)' };
+
+function addReminder() {
+  const title = document.getElementById('remTitle').value.trim();
+  const type = document.getElementById('remType').value;
+  const time = document.getElementById('remTime').value;
+  const repeat = document.getElementById('remRepeat').value;
+  const notes = document.getElementById('remNotes').value.trim();
+  if (!title) { showToast('Please enter a reminder title!', '⚠️'); return; }
+  if (!time) { showToast('Please set a reminder time!', '⚠️'); return; }
+  state.reminders.push({ id: Date.now(), title, type, time, repeat, notes, active: true });
+  save(); updateStats(); renderReminders();
+  document.getElementById('remTitle').value = '';
+  document.getElementById('remTime').value = '';
+  document.getElementById('remNotes').value = '';
+  showToast('Reminder added!', '🔔');
+}
+
+function deleteReminder(id) {
+  state.reminders = state.reminders.filter(r => r.id !== id);
+  save(); updateStats(); renderReminders();
+  showToast('Reminder removed', '🗑️');
+}
+
+function renderReminders() {
+  const el = document.getElementById('remindersList');
+  const notifDot = document.getElementById('notifDot');
+  const active = state.reminders.filter(r => r.active);
+  notifDot.style.display = active.length > 0 ? 'inline-block' : 'none';
+
+  if (!state.reminders.length) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-icon">🔔</div><p>No reminders set. Add one above!</p></div>`;
+    return;
+  }
+
+  const now = Date.now();
+  el.innerHTML = state.reminders.map(r => {
+    const t = new Date(r.time).getTime();
+    const diff = t - now;
+    let timeStr = '';
+    if (diff < 0) timeStr = '⚠️ Overdue!';
+    else if (diff < 3600000) timeStr = `${Math.floor(diff/60000)} min remaining`;
+    else if (diff < 86400000) timeStr = `${Math.floor(diff/3600000)}h ${Math.floor((diff%3600000)/60000)}m remaining`;
+    else timeStr = new Date(r.time).toLocaleString();
+
+    return `<div class="reminder-card">
+      <div class="reminder-icon" style="background:${remColors[r.type] || 'rgba(100,100,100,0.2)'}">
+        ${remIcons[r.type] || '📌'}
+      </div>
+      <div class="reminder-body">
+        <div class="reminder-title">${r.title}</div>
+        ${r.notes ? `<div class="reminder-desc">${r.notes}</div>` : ''}
+        <div class="reminder-time">🕒 ${timeStr} &nbsp;|&nbsp; ${r.repeat !== 'none' ? '🔁 ' + r.repeat : '📅 One-time'}</div>
+      </div>
+      <div class="reminder-actions">
+        <button class="btn-icon" onclick="deleteReminder(${r.id})" title="Delete">🗑️</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// Check for due reminders
+function checkReminders() {
+  const now = Date.now();
+  state.reminders.forEach(r => {
+    if (!r._notified && new Date(r.time).getTime() <= now && new Date(r.time).getTime() > now - 60000) {
+      r._notified = true;
+      showToast(`🔔 Reminder: ${r.title}`, '🔔');
+    }
+  });
+}
+setInterval(checkReminders, 30000);
+
+// ===================== MEMBERS =====================
+function addMember() {
+  const name = document.getElementById('memName').value.trim();
+  if (!name) { showToast('Enter a player name!', '⚠️'); return; }
+  state.members.push({
+    id: Date.now(),
+    name,
+    th: document.getElementById('memTH').value,
+    role: document.getElementById('memRole').value,
+    attacks: parseInt(document.getElementById('memAttacks').value) || 0
+  });
+  save(); updateStats(); renderMembers();
+  document.getElementById('memName').value = '';
+  document.getElementById('memAttacks').value = '0';
+  showToast(`${name} added to roster!`, '👥');
+}
+
+function deleteMember(id) {
+  state.members = state.members.filter(m => m.id !== id);
+  save(); updateStats(); renderMembers();
+}
+
+function renderMembers() {
+  const el = document.getElementById('membersList');
+  if (!state.members.length) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-icon">👥</div><p>No members added yet</p></div>`;
+    return;
+  }
+  const roleOrder = ['Leader','Co-Leader','Elder','Member'];
+  const sorted = [...state.members].sort((a,b) => roleOrder.indexOf(a.role) - roleOrder.indexOf(b.role));
+
+  el.innerHTML = `<table class="members-table">
+    <thead><tr>
+      <th>#</th><th>Player</th><th>TH</th><th>Role</th><th>Attacks</th><th>Action</th>
+    </tr></thead>
+    <tbody>
+    ${sorted.map((m, i) => `<tr>
+      <td style="color:#555;">${i+1}</td>
+      <td style="font-weight:600;">${m.name}</td>
+      <td><span class="badge badge-prep">${m.th}</span></td>
+      <td><span style="color:${m.role === 'Leader' ? 'var(--gold)' : m.role === 'Co-Leader' ? '#e74c3c' : m.role === 'Elder' ? '#7fb3d3' : 'var(--parchment-dark)'}">${m.role}</span></td>
+      <td>
+        <span class="stars">${'⭐'.repeat(m.attacks)}<span class="star-empty">${'☆'.repeat(2-m.attacks)}</span></span>
+        <span style="color:#555;font-size:0.8rem;"> ${m.attacks}/2</span>
+      </td>
+      <td><button class="btn-icon" onclick="deleteMember(${m.id})">🗑️</button></td>
+    </tr>`).join('')}
+    </tbody>
+  </table>
+  <div style="margin-top:14px;color:#555;font-size:0.82rem;text-align:right;">
+    ${state.members.length} member${state.members.length !== 1 ? 's' : ''} &nbsp;|&nbsp;
+    ${state.members.filter(m => m.attacks < 2).length} haven't used all attacks
+  </div>`;
+}
+
+// ===================== DASHBOARD =====================
+function renderDashboard() {
+  const el = document.getElementById('dashboardStatus');
+  const parts = [];
+
+  if (state.war.status !== 'idle') {
+    const badge = state.war.status === 'prep' ? `<span class="badge badge-prep">🛡️ Prep Day</span>` : `<span class="badge badge-war">⚔️ Battle Day</span>`;
+    parts.push(`
+      <div style="margin-bottom:16px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          ${badge}
+          <span style="color:var(--parchment-dark);">vs <strong style="color:var(--gold)">${state.war.enemy || '???'}</strong> &nbsp;(${state.war.size})</span>
+        </div>
+        <div style="display:flex;gap:30px;align-items:center;justify-content:center;">
+          <div style="text-align:center;"><div style="font-family:'Cinzel',serif;font-size:2rem;color:var(--gold)">${state.war.ourStars}⭐</div><div style="color:#888;font-size:0.75rem;">OUR STARS</div></div>
+          <div style="color:var(--red);font-size:1.2rem;font-family:'Cinzel',serif;">VS</div>
+          <div style="text-align:center;"><div style="font-family:'Cinzel',serif;font-size:2rem;color:#aaa">${state.war.enemyStars}⭐</div><div style="color:#888;font-size:0.75rem;">ENEMY STARS</div></div>
+        </div>
+        ${state.war.endTime ? `<div id="dashWarCD" class="countdown-box" style="margin-top:10px;"></div>` : ''}
+      </div>
+    `);
+  }
+
+  if (state.cwl.season) {
+    const wins = (state.cwl.rounds || []).filter(r => r.result === 'win').length;
+    parts.push(`
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <span class="badge badge-cwl">🏆 CWL Active</span>
+          <span style="color:var(--parchment-dark);">Round <strong style="color:var(--gold)">${state.cwl.round}/7</strong> &nbsp;|&nbsp; ${wins} wins</span>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          ${Array.from({length:7},(_,i) => {
+            const r = (state.cwl.rounds||[]).find(x => x.round === i+1);
+            return `<div class="round-dot ${r ? 'done' : i+1 === state.cwl.round ? 'current' : ''}" style="width:26px;height:26px;font-size:0.65rem;">${r ? (r.result === 'win' ? '✓' : '✗') : i+1}</div>`;
+          }).join('')}
+        </div>
+      </div>
+    `);
+  }
+
+  if (!parts.length) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-icon">🛡️</div><p>No active war or CWL.<br>Set one up in the War or CWL tabs!</p></div>`;
+  } else {
+    el.innerHTML = parts.join('<div class="divider"></div>');
+  }
+}
+
+// ===================== STATS =====================
+function updateStats() {
+  document.getElementById('stat-warwin').textContent = state.stats.wins;
+  document.getElementById('stat-warloss').textContent = state.stats.losses;
+  document.getElementById('stat-stars').textContent = state.stats.totalStars;
+  document.getElementById('stat-cwlmedal').textContent = state.stats.cwlMedals;
+  document.getElementById('stat-members').textContent = state.members.length;
+  document.getElementById('stat-reminders').textContent = state.reminders.length;
+}
+
+// ===================== INIT =====================
+function init() {
+  load();
+  // Set defaults
+  document.getElementById('clanName').value = state.clan.name;
+  document.getElementById('clanTag').value = state.clan.tag;
+  document.getElementById('warLeague').value = state.clan.league;
+  document.getElementById('clanLevel').value = state.clan.level;
+  document.getElementById('warStatus').value = state.war.status;
+  document.getElementById('warSize').value = state.war.size;
+  if (state.war.endTime) document.getElementById('warEndTime').value = state.war.endTime;
+  if (state.war.enemy) document.getElementById('enemyClan').value = state.war.enemy;
+  document.getElementById('ourStars').value = state.war.ourStars;
+  document.getElementById('enemyStars').value = state.war.enemyStars;
+  document.getElementById('ourDestruct').value = state.war.ourDestruct;
+  document.getElementById('enemyDestruct').value = state.war.enemyDestruct;
+  if (state.cwl.season) document.getElementById('cwlSeason').value = state.cwl.season;
+  document.getElementById('cwlLeague').value = state.cwl.league;
+  document.getElementById('cwlRound').value = state.cwl.round;
+  if (state.cwl.endTime) document.getElementById('cwlEndTime').value = state.cwl.endTime;
+  document.getElementById('cwlOurStars').value = state.cwl.ourStars;
+  document.getElementById('cwlEnemyStars').value = state.cwl.enemyStars;
+  document.getElementById('cwlTotalStars').value = state.cwl.totalStars;
+  document.getElementById('cwlMedals').value = state.cwl.medals;
+
+  renderWar();
+  renderWarLog();
+  renderCWL();
+  renderReminders();
+  renderMembers();
+  renderDashboard();
+  updateStats();
+  setTimeout(() => showToast('⚔️ Welcome to War Commander!', '🏰'), 500);
+}
+
+init();
+</script>
+</body>
+</html>
