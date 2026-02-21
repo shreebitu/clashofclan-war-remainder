@@ -664,7 +664,7 @@
       <div class="form-grid">
         <div class="form-group">
           <label>Clan Name</label>
-          <input type="text" id="clanName" placeholder="e.g. Dark Knights" value="UN1VERSE GODS">
+          <input type="text" id="clanName" placeholder="e.g. UN1VERSE GODS" value="UN1VERSE GODS">
         </div>
         <div class="form-group">
           <label>Clan Tag</label>
@@ -957,7 +957,7 @@
 <script>
 // ===================== DATA =====================
 let state = {
-  clan: { name: 'Dark Knights', tag: '#DK1234', league: 'Master League I', level: 15 },
+  clan: { name: 'UN1VERSE GODS', tag: '#2YV0CR2UR', league: 'Master League I', level: 15 },
   war: { status: 'idle', enemy: '', size: '20 vs 20', endTime: '', ourStars: 0, enemyStars: 0, ourDestruct: 0, enemyDestruct: 0 },
   cwl: { season: '', league: 'Master League I', round: 1, endTime: '', ourStars: 0, enemyStars: 0, totalStars: 0, medals: 0, rounds: [] },
   warLog: [],
@@ -1009,7 +1009,7 @@ function showToast(msg, icon = '⚔️') {
 
 // ===================== CLAN SETUP =====================
 function saveClanSetup() {
-  state.clan.name = document.getElementById('clanName').value || 'Dark Knights';
+  state.clan.name = document.getElementById('clanName').value || 'UN1VERSE GODS';
   state.clan.tag = document.getElementById('clanTag').value || '#000';
   state.clan.league = document.getElementById('warLeague').value;
   state.clan.level = parseInt(document.getElementById('clanLevel').value) || 1;
